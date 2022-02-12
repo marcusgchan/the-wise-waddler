@@ -26,22 +26,7 @@
   padding: 5%;
 }
 
-.changeB {
-  background-color: var(--accent-clr);
-  font-size: smaller;
-  border: black 1px solid;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.changeB:hover {
-  background-color: lightsalmon;
-  color: black;
-}
-
-.jokeB {
-  grid-area: jokeB;
+.button {
   background-color: var(--accent-clr);
   margin-top: 10%;
   margin-bottom: 10%;
@@ -55,72 +40,35 @@
   cursor: pointer;
 }
 
-.jokeB:hover {
+.jokeB {
+  grid-area: jokeB;
+}
+
+.button:hover {
   background-color: lightsalmon;
   color: black;
 }
 
 .quoteB {
   grid-area: quoteB;
-  background-color: var(--accent-clr);
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  border: black 1px solid;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.quoteB:hover {
-  background-color: lightsalmon;
-  color: black;
 }
 
 .saveB {
   grid-area: saveB;
-  background-color: var(--accent-clr);
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  border: black 1px solid;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.saveB:hover {
-  background-color: lightsalmon;
-  color: black;
 }
 
 .viewB {
   grid-area: viewB;
-  background-color: var(--accent-clr);
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  border: black 1px solid;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.viewB:hover {
-  background-color: lightsalmon;
-  color: black;
 }
 
 .slider {
   grid-area: slider;
   margin: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 50px;
+}
+
+datalist {
+  display: contents;
 }
