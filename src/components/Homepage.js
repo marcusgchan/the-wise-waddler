@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "./styles/Homepage.module.css";
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const INSPIRATIONAL_QUOTE_URL = "https://zenquotes.io/api/random";
 const JOKE_URL = "https://icanhazdadjoke.com/api";
+=======
+import DuckClosedMouth from "../img/DuckClosedMouth.svg";
+import DuckOpenMouth from "../img/DuckOpenMouth.svg";
+>>>>>>> b23da179005b319c25fd58bb1a2a9a35000d9de6
 
 const Homepage = () => {
   const [quote, setquote] = useState({
