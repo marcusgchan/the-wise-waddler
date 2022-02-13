@@ -3,6 +3,8 @@
   height: 100vh;
   padding: 3rem;
   min-width: 70rem;
+  max-width: 90rem;
+  margin: auto;
 }
 
 .grid {
@@ -17,7 +19,7 @@
     "quote quote quote quote quote quote"
     ". . . . img img"
     "quoteB jokeB saveB viewB img img"
-    "sliderTitle slider slider slider img img"
+    "sliderLeft slider slider sliderRight img img"
     ". . . . img img";
 }
 
@@ -30,9 +32,17 @@
   font-size: 400%;
 }
 
-.sliderTitle {
+.sliderLeft {
   font-family: cursive;
-  grid-area: sliderTitle;
+  grid-area: sliderLeft;
+  color: var(--accent-clr);
+  -webkit-text-stroke: black 1px;
+  text-align: center;
+  font-size: 200%;
+}
+.sliderRight {
+  font-family: cursive;
+  grid-area: sliderRight;
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
   text-align: center;
@@ -61,10 +71,11 @@
   width: 0;
   border-left: var(--triangle-width) solid transparent;
   border-right: var(--triangle-width) solid transparent;
-  border-top: var(--triangle-height) solid rgb(255, 214, 0, 255);
+  border-top: var(--triangle-height) solid var(--text-box-clr);
 }
 
 .button {
+  text-transform: capitalize;
   background-color: var(--accent-clr);
   min-width: 11rem;
   max-width: 15rem;

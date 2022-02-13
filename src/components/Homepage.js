@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles/Homepage.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import DuckClosedMouth from "../img/DuckClosedMouth.svg";
 import DuckOpenMouth from "../img/DuckOpenMouth.svg";
 import DuckTalkingGif from "../img/DuckTalkingGif.gif";
@@ -32,9 +33,11 @@ const Homepage = () => {
   const [savedQuotes, setSavedQuotes] = useState([]);
   const [isQuacking, setIsQuacking] = useState(false);
   const [slider, setSlider] = useState(SLIDER_CONFIG.defaultValue);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setSavedQuotes(JSON.parse(localStorage.getItem("quotes")));
+    if (localStorage.getItem("quotes"))
+      setSavedQuotes(JSON.parse(localStorage.getItem("quotes")));
   }, []);
 
   function quackify(quote) {
@@ -108,7 +111,7 @@ const Homepage = () => {
       }
     }
 
-    if (!match) {
+    if (!match && quote.id) {
       setSavedQuotes([...savedQuotes, quote]);
       // const test = [{}, { a: "a", b: "b" }, { a: "a", b: "b" }];
       // localStorage.setItem("quotes", JSON.stringify(test));
@@ -117,7 +120,7 @@ const Homepage = () => {
   }
 
   function seeQuotes() {
-    //sending saved quotes to next page
+    navigate("/saved-quotes");
   }
 
   return (
@@ -147,7 +150,7 @@ const Homepage = () => {
         >
           Ask for laughter
         </button>
-        <p className={styles.sliderTitle}> Quackify: </p>
+        <p className={styles.sliderLeft}> no QUACK :( </p>
         <input
           type="range"
           list="tickmarks"
@@ -164,6 +167,7 @@ const Homepage = () => {
           <option value="1"></option>
           <option value="2"></option>
         </datalist>
+        <p className={styles.sliderRight}> QUACKIFY :) </p>
         <button
           className={`${styles.saveB} ${styles.button}`}
           onClick={saveQuote}
