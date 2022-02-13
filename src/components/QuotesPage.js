@@ -5,40 +5,58 @@ import dummyQuotes from "../dummyQuotes.json";
 import { useNavigate } from "react-router-dom";
 
 const QuotesPage = () => {
-  // const quotes = dummyQuotes.quotes;
   let quotes = JSON.parse(localStorage.getItem("quotes"));
   if (quotes == null) {
     quotes = [];
   }
-  const [filterSearch,setFilterSearch] = useState("");
+  const [filterSearch, setFilterSearch] = useState("");
   const [filteredQuotes, setFilteredQuotes] = useState(quotes);
   const [quackifyLevel, setQuackifyLevel] = useState(0);
   const navigate = useNavigate();
-  useEffect(()=>{
-    if (!filterSearch.replace(/\s/g, '').length) { //If there is only whitespace in filterSearch
+  useEffect(() => {
+    if (!filterSearch.replace(/\s/g, "").length) {
+      //If there is only whitespace in filterSearch
       setFilteredQuotes(quotes);
     } else {
       switch (quackifyLevel) {
         case 0:
-          setFilteredQuotes(quotes.filter((quote)=>quote.originalQuote.includes(filterSearch)));
+          setFilteredQuotes(
+            quotes.filter((quote) =>
+              quote.originalQuote
+                .toLowerCase()
+                .includes(filterSearch.toLowerCase())
+            )
+          );
           break;
         case 1:
-          setFilteredQuotes(quotes.filter((quote)=>quote.quackifyQuote.includes(filterSearch)));
+          setFilteredQuotes(
+            quotes.filter((quote) =>
+              quote.quackifyQuote
+                .toLowerCase()
+                .includes(filterSearch.toLowerCase())
+            )
+          );
           break;
         default:
-          setFilteredQuotes(quotes.filter((quote)=>quote.fullQuackifyQuote.includes(filterSearch)));
+          setFilteredQuotes(
+            quotes.filter((quote) =>
+              quote.fullQuackifyQuote
+                .toLower()
+                .includes(filterSearch.toLowerCase())
+            )
+          );
           break;
       }
     }
-  },[filterSearch,quackifyLevel]);
+  }, [filterSearch, quackifyLevel]);
 
   const handleFilterChange = (e) => {
     setFilterSearch(e.target.value);
-  }
+  };
 
   const handleQuackifyClick = (type) => {
     if (type === "+") {
-      setQuackifyLevel((prev)=>{
+      setQuackifyLevel((prev) => {
         if (prev === 2) {
           return 2;
         } else {
@@ -46,7 +64,7 @@ const QuotesPage = () => {
         }
       });
     } else {
-      setQuackifyLevel((prev)=>{
+      setQuackifyLevel((prev) => {
         if (prev === 0) {
           return 0;
         } else {
@@ -54,7 +72,7 @@ const QuotesPage = () => {
         }
       });
     }
-  }
+  };
 
   const quackDisplay = () => {
     switch (quackifyLevel) {
@@ -65,7 +83,7 @@ const QuotesPage = () => {
       default:
         return "Full Quacked";
     }
-  }
+  };
 
   return (
     <>
@@ -77,36 +95,46 @@ const QuotesPage = () => {
         <section className={styles.inputQuotesContainer}>
           <div className={styles.inputsContainer}>
             <div className={styles.quackifyButtonContainer}>
-              <button onClick={()=>handleQuackifyClick("-")}>-</button>
-              <p className={styles.quackLevelDisplay}>Quack Level: {quackDisplay()}</p>
-              <button onClick={()=>handleQuackifyClick("+")}>+</button>
+              <button onClick={() => handleQuackifyClick("-")}>-</button>
+              <p className={styles.quackLevelDisplay}>
+                Quack Level: {quackDisplay()}
+              </p>
+              <button onClick={() => handleQuackifyClick("+")}>+</button>
             </div>
-            <input type="text" className={styles.search} value={filterSearch} 
-            onChange={handleFilterChange}/>
+            <input
+              type="text"
+              className={styles.search}
+              value={filterSearch}
+              onChange={handleFilterChange}
+            />
           </div>
           <div className={styles.quotesContainer}>
-            <Rows filteredQuotes={filteredQuotes} quackifyLevel={quackifyLevel}/>
+            <Rows
+              filteredQuotes={filteredQuotes}
+              quackifyLevel={quackifyLevel}
+            />
           </div>
         </section>
       </div>
       <div className={styles.backButtonContainer}>
-        <button className={styles.backButton} onClick={()=>navigate("/")}>GO BACK</button>
+        <button className={styles.backButton} onClick={() => navigate("/")}>
+          GO BACK
+        </button>
       </div>
     </>
-    
   );
 };
 
-const Rows = ({filteredQuotes, quackifyLevel}) => {
+const Rows = ({ filteredQuotes, quackifyLevel }) => {
   // const quotes = localStorage.getItem("quotes");
-  
-  return(
+
+  return (
     <div>
-      {filteredQuotes.map((quote)=>
-        <Row key={quote.id} quote={quote} quackifyLevel={quackifyLevel}/>)}
+      {filteredQuotes.map((quote) => (
+        <Row key={quote.id} quote={quote} quackifyLevel={quackifyLevel} />
+      ))}
     </div>
   );
-  
 };
 
 const Row = ({ quote, quackifyLevel }) => {
@@ -138,7 +166,6 @@ const Row = ({ quote, quackifyLevel }) => {
       </div>
     );
   }
-  
 };
 
 export default QuotesPage;

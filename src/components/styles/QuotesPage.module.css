@@ -1,11 +1,9 @@
-*{
-  background-color: white;
-}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
+  overflow: hidden;
 }
 
 .headingContainer {
@@ -14,9 +12,9 @@
 }
 
 .heading {
-  /* padding-bottom: 0.5rem; */
+  padding-bottom: 0.5rem;
+  font-size: 250%;
   letter-spacing: 0.5rem;
-  /* font-family: Helvetica, Arial, sans-serif; */
   font-family: cursive;
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
@@ -46,7 +44,7 @@
   align-items: center;
 }
 
-.quackifyButtonContainer button{
+.quackifyButtonContainer button {
   border: none;
   background-color: var(--accent-clr);
   width: 2rem;
@@ -56,7 +54,7 @@
   cursor: pointer;
 }
 
-.quackifyButtonContainer button:hover{
+.quackifyButtonContainer button:hover {
   font-weight: bolder;
 }
 
@@ -72,19 +70,41 @@
 }
 
 .quotesContainer {
-  border: 2px solid var(--accent-clr);
+  border: 8px solid var(--accent-clr);
   border-radius: 0.5rem;
+  width: 60rem;
   height: 35rem;
   padding: 0 1rem;
   overflow-y: scroll;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0.5rem;
+}
+
+Track ::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  background-color: var(--secondary-clr);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: orange;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: orange;
+}
+
 .quote {
   padding: 0.5rem;
   margin: 1rem 0;
+  border-radius: 0.5rem;
   border: 1px solid black;
+  background-color: orange;
   font-family: Arial, Helvetica, sans-serif;
-  /* cursor: pointer; */
 }
 
 .backButtonContainer {

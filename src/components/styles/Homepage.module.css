@@ -24,7 +24,7 @@
 }
 
 .title {
-  /* font-family: cursive; */
+  font-family: cursive;
   grid-area: title;
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
@@ -57,6 +57,7 @@
   position: relative;
   grid-area: quote;
   width: 100%;
+  min-height: 4rem;
   padding: 1.5rem;
   background-color: var(--background-clr);
   border-radius: 1rem;
@@ -64,6 +65,7 @@
 }
 
 .triangle {
+  background-color: transparent;
   --triangle-height: 4rem;
   --triangle-width: 3rem;
   position: absolute;
