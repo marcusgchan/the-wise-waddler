@@ -54,6 +54,11 @@
 }
 
 .backButton {
-  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   color: var(--main-font-clr);
+  letter-spacing: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
 }
