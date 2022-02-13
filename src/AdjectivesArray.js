@@ -1042,7 +1042,6 @@ var adjectives = [
   " wacky",
   " waggish",
   " waiting",
-  " ",
   " wakeful",
   " wandering",
   " wanting",

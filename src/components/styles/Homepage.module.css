@@ -40,7 +40,7 @@
 }
 
 .quote {
-  --background-clr: yellow;
+  --background-clr: rgb(255, 214, 0, 255);
   --shadow-radius: 1rem;
   position: relative;
   grid-area: quote;
@@ -61,7 +61,7 @@
   width: 0;
   border-left: var(--triangle-width) solid transparent;
   border-right: var(--triangle-width) solid transparent;
-  border-top: var(--triangle-height) solid yellow;
+  border-top: var(--triangle-height) solid rgb(255, 214, 0, 255);
 }
 
 .button {
@@ -108,8 +108,5 @@
   justify-self: flex-end;
   grid-area: img;
   max-width: 20rem;
-  margin-top: 5rem;
   height: 30rem;
-  /* opacity: 0; */
-  background: url("../../img/DuckClosedMouth.svg") no-repeat;
 }

@@ -632,6 +632,8 @@ var verbs = [
   " yell",
   " zip",
   " zoom",
+  " find",
+  " quacked",
 ];
 
 export default verbs;

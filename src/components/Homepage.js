@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DuckClosedMouth from "../img/DuckClosedMouth.svg";
 import DuckOpenMouth from "../img/DuckOpenMouth.svg";
+import DuckTalkingGif from "../img/DuckTalkingGif.gif";
 import TextBubble from "../img/SpeachBubble01.svg";
 import nouns from "../NounsArray.js";
 import verbs from "../VerbsArray.js";
@@ -12,6 +13,7 @@ import adjectives from "../AdjectivesArray.js";
 const INSPIRATIONAL_QUOTE_URL = "https://api.kanye.rest";
 const JOKE_URL =
   "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+
 const QUACK_CONFIG = {
   noQuack: 0,
   quack: 1,
@@ -30,6 +32,10 @@ const Homepage = () => {
   const [savedQuotes, setSavedQuotes] = useState([]);
   const [isQuacking, setIsQuacking] = useState(false);
   const [slider, setSlider] = useState(SLIDER_CONFIG.defaultValue);
+
+  useEffect(() => {
+    setSavedQuotes(JSON.parse(localStorage.getItem("quotes")));
+  }, []);
 
   function quackify(quote) {
     let quackifyQuote = quote;
@@ -59,6 +65,11 @@ const Homepage = () => {
     return fullQuackifyQuote;
   }
 
+  function displayGif() {
+    setIsQuacking(true);
+    setTimeout(() => setIsQuacking(false), 3000);
+  }
+
   function getJoke() {
     axios
       .get(JOKE_URL)
@@ -70,6 +81,7 @@ const Homepage = () => {
           quackifyQuote: quackify(quote),
           fullQuackifyQuote: fullQuackify(quote),
         });
+        displayGif();
       });
   }
 
@@ -77,18 +89,31 @@ const Homepage = () => {
     axios
       .get(INSPIRATIONAL_QUOTE_URL)
       .then((res) => res.data)
-      .then(({ quote }) =>
+      .then(({ quote }) => {
         setQuote({
           id: quote,
           originalQuote: quote,
           quackifyQuote: quackify(quote),
           fullQuackifyQuote: fullQuackify(quote),
-        })
-      );
+        });
+        displayGif();
+      });
   }
 
-  function saveQuote(quote) {
-    setSavedQuotes([...savedQuotes, quote]);
+  function saveQuote(e) {
+    let match = false;
+    for (let i = 0; i < savedQuotes.length; i++) {
+      if (quote.id === savedQuotes[i].id) {
+        match = true;
+      }
+    }
+
+    if (!match) {
+      setSavedQuotes([...savedQuotes, quote]);
+      // const test = [{}, { a: "a", b: "b" }, { a: "a", b: "b" }];
+      // localStorage.setItem("quotes", JSON.stringify(test));
+      localStorage.setItem("quotes", JSON.stringify([...savedQuotes, quote]));
+    }
   }
 
   function seeQuotes() {
@@ -105,7 +130,11 @@ const Homepage = () => {
           {slider === QUACK_CONFIG.fullQuack && quote.fullQuackifyQuote}
           <span className={styles.triangle}></span>
         </p>
-        <img src={DuckOpenMouth} alt="" className={styles.img}></img>
+        <img
+          src={isQuacking ? DuckTalkingGif : DuckClosedMouth}
+          className={styles.img}
+          alt=""
+        />
         <button
           className={`${styles.quoteB} ${styles.button}`}
           onClick={getQuote}
