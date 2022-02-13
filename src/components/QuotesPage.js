@@ -41,7 +41,7 @@ const QuotesPage = () => {
           setFilteredQuotes(
             quotes.filter((quote) =>
               quote.fullQuackifyQuote
-                .toLower()
+                .toLowerCase()
                 .includes(filterSearch.toLowerCase())
             )
           );
