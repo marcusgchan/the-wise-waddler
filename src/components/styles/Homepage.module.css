@@ -1,39 +1,75 @@
 .container {
   background-color: var(--secondary-clr);
+  height: 100vh;
+  padding: 3rem;
+  min-width: 70rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr 1fr;
+  grid-template-rows: 7rem 10rem 5rem 5rem 5rem 5rem;
   grid-template-areas:
     ". title title title title ."
     "quote quote quote quote quote quote"
-    "quoteB quoteB jokeB jokeB img img"
-    "slider slider slider slider img img"
-    "saveB saveB viewB viewB img img";
+    ". . . . img img"
+    "quoteB jokeB saveB viewB img img"
+    "sliderTitle slider slider slider img img"
+    ". . . . img img";
 }
 
 .title {
+  font-family: cursive;
   grid-area: title;
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
   text-align: center;
-  padding: 5%;
+  font-size: 400%;
+}
+
+.sliderTitle {
+  font-family: cursive;
+  grid-area: sliderTitle;
+  color: var(--accent-clr);
+  -webkit-text-stroke: black 1px;
+  text-align: center;
+  font-size: 200%;
 }
 
 .quote {
+  --background-clr: yellow;
+  --shadow-radius: 1rem;
+  position: relative;
   grid-area: quote;
-  padding: 5%;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--background-clr);
+  border-radius: 1rem;
+  box-shadow: 0 0 0 var(--shadow-radius) var(--background-clr);
+}
+
+.triangle {
+  --triangle-height: 4rem;
+  --triangle-width: 3rem;
+  position: absolute;
+  border-top: 1rem;
+  bottom: calc(-1 * (var(--shadow-radius) + var(--triangle-height)));
+  right: 14rem;
+  width: 0;
+  border-left: var(--triangle-width) solid transparent;
+  border-right: var(--triangle-width) solid transparent;
+  border-top: var(--triangle-height) solid yellow;
 }
 
 .button {
   background-color: var(--accent-clr);
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  min-width: 11rem;
+  max-width: 15rem;
+  max-height: 3rem;
+  padding: 0.5rem 0.8rem;
   border: black 1px solid;
   border-radius: 5px;
   transition-duration: 0.4s;
@@ -63,12 +99,17 @@
 
 .slider {
   grid-area: slider;
-  margin: 5%;
-  margin-left: 25%;
-  margin-right: 25%;
-  height: 50px;
+  height: 100px;
+  width: 20rem;
+  cursor: pointer;
 }
 
-datalist {
-  display: contents;
+.img {
+  justify-self: flex-end;
+  grid-area: img;
+  max-width: 20rem;
+  margin-top: 5rem;
+  height: 30rem;
+  /* opacity: 0; */
+  background: url("../../img/DuckClosedMouth.svg") no-repeat;
 }
