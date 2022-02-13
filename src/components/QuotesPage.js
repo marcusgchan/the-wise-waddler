@@ -5,7 +5,11 @@ import dummyQuotes from "../dummyQuotes.json";
 import { useNavigate } from "react-router-dom";
 
 const QuotesPage = () => {
-  const quotes = dummyQuotes.quotes;
+  // const quotes = dummyQuotes.quotes;
+  let quotes = JSON.parse(localStorage.getItem("quotes"));
+  if (quotes == null) {
+    quotes = [];
+  }
   const [filterSearch,setFilterSearch] = useState("");
   const [filteredQuotes, setFilteredQuotes] = useState(quotes);
   const [quackifyLevel, setQuackifyLevel] = useState(0);
