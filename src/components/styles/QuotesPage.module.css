@@ -29,6 +29,42 @@
   min-width: 60rem;
 }
 
+.inputsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quackifyButtonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.quackifyButtonContainer button{
+  border: none;
+  background-color: var(--accent-clr);
+  width: 2rem;
+  height: 1.5rem;
+  margin: 0 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.quackifyButtonContainer button:hover{
+  font-weight: bolder;
+}
+
+.quackLevelDisplay {
+  width: 15rem;
+  text-align: center;
+}
+
+.search {
+  padding: 0.3rem 0.5rem;
+  align-self: flex-end;
+  width: 10rem;
+}
+
 .quotesContainer {
   border: 2px solid var(--accent-clr);
   border-radius: 0.5rem;
@@ -41,12 +77,7 @@
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid black;
-}
-
-.search {
-  padding: 0.3rem 0.5rem;
-  align-self: flex-end;
-  width: 10rem;
+  /* cursor: pointer; */
 }
 
 .backButtonContainer {
