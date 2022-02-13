@@ -20,13 +20,13 @@ const QuotesPage = () => {
     } else {
       switch (quackifyLevel) {
         case 0:
-          setFilteredQuotes(quotes.filter((quote)=>quote.noQuackQuote.includes(filterSearch)));
+          setFilteredQuotes(quotes.filter((quote)=>quote.originalQuote.includes(filterSearch)));
           break;
         case 1:
-          setFilteredQuotes(quotes.filter((quote)=>quote.midQuackQuote.includes(filterSearch)));
+          setFilteredQuotes(quotes.filter((quote)=>quote.quackifyQuote.includes(filterSearch)));
           break;
         default:
-          setFilteredQuotes(quotes.filter((quote)=>quote.fullQuackQuote.includes(filterSearch)));
+          setFilteredQuotes(quotes.filter((quote)=>quote.fullQuackifyQuote.includes(filterSearch)));
           break;
       }
     }
@@ -122,19 +122,19 @@ const Row = ({ quote, quackifyLevel }) => {
   if (quackifyLevel === 0) {
     return (
       <div className={styles.quote}>
-        <p>{quote.noQuackQuote}</p>
+        <p>{quote.originalQuote}</p>
       </div>
     );
   } else if (quackifyLevel === 1) {
     return (
       <div className={styles.quote}>
-        <p>{quote.midQuackQuote}</p>
+        <p>{quote.quackifyQuote}</p>
       </div>
     );
   } else {
     return (
       <div className={styles.quote}>
-        <p>{quote.fullQuackQuote}</p>
+        <p>{quote.fullQuackifyQuote}</p>
       </div>
     );
   }
