@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-family: cursive;
+  /* font-family: cursive; */
   grid-area: title;
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
@@ -38,7 +38,8 @@
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
   text-align: center;
-  font-size: 200%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 .sliderRight {
   font-family: cursive;
@@ -46,7 +47,8 @@
   color: var(--accent-clr);
   -webkit-text-stroke: black 1px;
   text-align: center;
-  font-size: 200%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .quote {
