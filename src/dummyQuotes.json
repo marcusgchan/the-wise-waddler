@@ -1,0 +1,100 @@
+{
+    "quotes": [
+        {
+            "id": 0,
+            "noQuackQuote": "Quote 0 is here",
+            "midQuackQuote": "Duck 0 is here",
+            "fullQuackQuote": "Duck 0 quack here"
+        },
+        {
+            "id": 1,
+            "noQuackQuote": "Quote 1 is here",
+            "midQuackQuote": "Duck 1 is here",
+            "fullQuackQuote": "Duck 1 quack here"
+        },
+        {
+            "id": 2,
+            "noQuackQuote": "Quote 2 is here",
+            "midQuackQuote": "Duck 2 is here",
+            "fullQuackQuote": "Duck 2 quack here"
+        },
+        {
+            "id": 3,
+            "noQuackQuote": "Quote 3 is here",
+            "midQuackQuote": "Duck 3 is here",
+            "fullQuackQuote": "Duck 3 quack here"
+        },
+        {
+            "id": 4,
+            "noQuackQuote": "Quote 4 is here",
+            "midQuackQuote": "Duck 4 is here",
+            "fullQuackQuote": "Duck 4 quack here"
+        },
+        {
+            "id": 5,
+            "noQuackQuote": "Quote 5 is here",
+            "midQuackQuote": "Duck 5 is here",
+            "fullQuackQuote": "Duck 5 quack here"
+        },
+        {
+            "id": 6,
+            "noQuackQuote": "Quote 6 is here",
+            "midQuackQuote": "Duck 6 is here",
+            "fullQuackQuote": "Duck 6 quack here"
+        },
+        {
+            "id": 7,
+            "noQuackQuote": "Quote 7 is here",
+            "midQuackQuote": "Duck 7 is here",
+            "fullQuackQuote": "Duck 7 quack here"
+        },
+        {
+            "id": 8,
+            "noQuackQuote": "Quote 8 is here",
+            "midQuackQuote": "Duck 8 is here",
+            "fullQuackQuote": "Duck 8 quack here"
+        },
+        {
+            "id": 9,
+            "noQuackQuote": "Quote 9 is here",
+            "midQuackQuote": "Duck 9 is here",
+            "fullQuackQuote": "Duck 9 quack here"
+        },
+        {
+            "id": 10,
+            "noQuackQuote": "Quote 10 is here",
+            "midQuackQuote": "Duck 10 is here",
+            "fullQuackQuote": "Duck 10 quack here"
+        },
+        {
+            "id": 11,
+            "noQuackQuote": "Quote 11 is here",
+            "midQuackQuote": "Duck 11 is here",
+            "fullQuackQuote": "Duck 11 quack here"
+        },
+        {
+            "id": 12,
+            "noQuackQuote": "Quote 12 is here",
+            "midQuackQuote": "Duck 12 is here",
+            "fullQuackQuote": "Duck 12 quack here"
+        },
+        {
+            "id": 13,
+            "noQuackQuote": "Quote 13 is here",
+            "midQuackQuote": "Duck 13 is here",
+            "fullQuackQuote": "Duck 13 quack here"
+        },
+        {
+            "id": 14,
+            "noQuackQuote": "Quote 14 is here",
+            "midQuackQuote": "Duck 14 is here",
+            "fullQuackQuote": "Duck 14 quack here"
+        },
+        {
+            "id": 15,
+            "noQuackQuote": "Quote 15 is here",
+            "midQuackQuote": "Duck 15 is here",
+            "fullQuackQuote": "Duck 15 quack here"
+        }
+    ]
+}
